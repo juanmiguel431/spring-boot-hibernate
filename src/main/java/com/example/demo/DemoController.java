@@ -15,8 +15,13 @@ public class DemoController {
 //    private Coach coach2;
 
     @Autowired
-    public DemoController(@Qualifier("trackCoach") Coach coach) {
-        this.coach = coach;
+    public DemoController(@Qualifier("trackCoach") Coach coach1, @Qualifier("trackCoach") Coach coach2) {
+        this.coach = coach1;
+
+        var equal = coach1.equals(coach2);
+        System.out.println("The objets are equal? " + equal);
+        //@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON) Yes
+        //@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) No (Similar to transient)
     }
 
 //    @Autowired
