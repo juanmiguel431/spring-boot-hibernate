@@ -26,6 +26,7 @@ public class TrackCoach implements Coach {
         System.out.println("My initialization stuff " + this.getClass().getSimpleName());
     }
 
+    // PreDestroy is not called on prototype scoped beans.
     @PreDestroy
     public void myDestroyStuff(){
         System.out.println("My destroying stuff " + this.getClass().getSimpleName());
