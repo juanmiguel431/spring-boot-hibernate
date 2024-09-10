@@ -15,7 +15,7 @@ public class DemoController {
 //    private Coach coach2;
 
     @Autowired
-    public DemoController(@Qualifier("trackCoach") Coach coach1, @Qualifier("trackCoach") Coach coach2) {
+    public DemoController(@Qualifier("trackCoach") Coach coach1, @Qualifier("trackCoach") Coach coach2, @Qualifier("aquatic") Coach swimCoach) {
         this.coach = coach1;
 
         var equal = coach1.equals(coach2);
