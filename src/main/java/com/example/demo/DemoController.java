@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.util.Coach;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
