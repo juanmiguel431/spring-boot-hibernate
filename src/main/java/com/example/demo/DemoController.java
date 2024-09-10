@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     private Coach coach;
+
+//    @Autowired
+//    private Coach coach2;
+
 //    private final Coach coach;
 //
 //    public DemoController(Coach coach) {
