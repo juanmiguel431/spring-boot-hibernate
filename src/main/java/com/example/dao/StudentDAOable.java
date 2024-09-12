@@ -9,4 +9,5 @@ public interface StudentDAOable {
     Student getById(int id);
     List<Student> getAll();
     List<Student> findByLastName(String lastName);
+    Student update(Student entity);
 }

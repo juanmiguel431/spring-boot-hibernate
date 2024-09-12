@@ -43,4 +43,10 @@ public class StudentDAO implements StudentDAOable {
 
         return query.getResultList();
     }
+
+    @Transactional
+    @Override
+    public Student update(Student entity) {
+        return entityManager.merge(entity);
+    }
 }

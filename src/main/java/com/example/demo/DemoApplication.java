@@ -24,8 +24,18 @@ public class DemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAOable studentDAO) {
 		return runner -> {
 			System.out.println("Hello World");
-			createStudent(studentDAO);
+//			createStudent(studentDAO);
+			updateStudent(studentDAO);
 		};
+	}
+
+	private void updateStudent(StudentDAOable studentDAO) {
+		var student = studentDAO.getById(1);
+		student.setFirstName("Hector");
+		studentDAO.update(student);
+
+		var updatedStudent = studentDAO.getById(1);
+		System.out.println(updatedStudent.getFirstName());
 	}
 
 	private void createStudent(StudentDAOable studentDAO) {
