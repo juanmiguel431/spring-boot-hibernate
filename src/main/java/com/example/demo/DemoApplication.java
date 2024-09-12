@@ -24,7 +24,7 @@ public class DemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAOable studentDAO) {
 		return runner -> {
 			System.out.println("Hello World");
-//			createStudent(studentDAO);
+			createStudent(studentDAO);
 			updateStudent(studentDAO);
 		};
 	}
