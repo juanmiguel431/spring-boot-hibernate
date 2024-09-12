@@ -10,4 +10,6 @@ public interface StudentDAOable {
     List<Student> getAll();
     List<Student> findByLastName(String lastName);
     Student update(Student entity);
+    void deleteById(int id);
+    int deleteAll();
 }

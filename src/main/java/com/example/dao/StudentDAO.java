@@ -49,4 +49,17 @@ public class StudentDAO implements StudentDAOable {
     public Student update(Student entity) {
         return entityManager.merge(entity);
     }
+
+    @Transactional
+    @Override
+    public void deleteById(int id) {
+        var student = entityManager.find(Student.class, id);
+        entityManager.remove(student);
+    }
+
+    @Override
+    public int deleteAll() {
+        var query = entityManager.createQuery("delete from Student");
+        return query.executeUpdate();
+    }
 }
