@@ -57,6 +57,7 @@ public class StudentDAO implements StudentDAOable {
         entityManager.remove(student);
     }
 
+    @Transactional
     @Override
     public int deleteAll() {
         var query = entityManager.createQuery("delete from Student");
