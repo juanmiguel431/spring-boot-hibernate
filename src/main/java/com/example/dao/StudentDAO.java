@@ -34,4 +34,13 @@ public class StudentDAO implements StudentDAOable {
         var query = entityManager.createQuery("from Student order by firstName asc", Student.class);
         return query.getResultList();
     }
+
+    @Override
+    public List<Student> findByLastName(String lastName) {
+        var query = entityManager.createQuery("from Student where lastName like :lastName", Student.class);
+
+        query.setParameter("lastName", "%" + lastName + "%");
+
+        return query.getResultList();
+    }
 }

@@ -46,5 +46,11 @@ public class DemoApplication {
 		for(var item: allStudents) {
 			System.out.println(item);
 		}
+
+		System.out.println("Paulinos Students are:");
+		var paulinos = studentDAO.findByLastName("Paul");
+		for(var item: paulinos) {
+			System.out.println(item);
+		}
 	}
 }
