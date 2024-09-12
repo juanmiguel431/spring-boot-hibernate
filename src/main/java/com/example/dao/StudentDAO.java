@@ -21,4 +21,9 @@ public class StudentDAO implements StudentDAOable {
     public void save(Student entity) {
         entityManager.persist(entity);
     }
+
+    @Override
+    public Student getById(int id) {
+        return entityManager.find(Student.class, id);
+    }
 }

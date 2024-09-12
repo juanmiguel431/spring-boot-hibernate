@@ -35,7 +35,10 @@ public class DemoApplication {
 		System.out.println("Saving the Student.");
 		studentDAO.save(student);
 
-		System.out.println("Student saved. The Id is " + student.getId());
+		var id = student.getId();
+		System.out.println("Student saved. The Id is " + id);
 
+		var dbStudent = studentDAO.getById(id);
+		System.out.println("The queried student is " + dbStudent);
 	}
 }
