@@ -30,7 +30,7 @@ public class DemoApplication {
 
 	private void createStudent(StudentDAOable studentDAO) {
 		System.out.println("Creating student");
-		var student = new Student("Juan", "Paulino", "juanmiguel431@gmail.com");
+		var student = new Student("Marcos", "Lucas", "juanmiguel431@gmail.com");
 
 		System.out.println("Saving the Student.");
 		studentDAO.save(student);
@@ -40,5 +40,11 @@ public class DemoApplication {
 
 		var dbStudent = studentDAO.getById(id);
 		System.out.println("The queried student is " + dbStudent);
+
+		var allStudents = studentDAO.getAll();
+
+		for(var item: allStudents) {
+			System.out.println(item);
+		}
 	}
 }

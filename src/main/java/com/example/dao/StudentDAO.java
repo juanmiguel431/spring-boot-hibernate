@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Repository
 public class StudentDAO implements StudentDAOable {
 
@@ -25,5 +27,11 @@ public class StudentDAO implements StudentDAOable {
     @Override
     public Student getById(int id) {
         return entityManager.find(Student.class, id);
+    }
+
+    @Override
+    public List<Student> getAll() {
+        var query = entityManager.createQuery("from Student order by firstName asc", Student.class);
+        return query.getResultList();
     }
 }
